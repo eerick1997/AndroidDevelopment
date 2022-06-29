@@ -1,7 +1,7 @@
 package com.eerick.learningmvvm.domain.model
 
-import com.eerick.learningmvvm.data.database.entities.QuoteEntity
-import com.eerick.learningmvvm.data.model.QuoteModel
+import com.eerick.learningmvvm.domain.data.database.entities.QuoteEntity
+import com.eerick.learningmvvm.domain.data.model.QuoteModel
 
 data class Quote(val quote: String, val author: String)
 

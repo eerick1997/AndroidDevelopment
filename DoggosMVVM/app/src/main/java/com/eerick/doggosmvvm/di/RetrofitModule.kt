@@ -1,6 +1,6 @@
-package com.eerick.learningmvvm.dependencyInjection
+package com.eerick.doggosmvvm.di
 
-import com.eerick.learningmvvm.domain.data.network.QuoteApiClient
+import com.eerick.doggosmvvm.domain.data.network.DogApiClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,18 +11,17 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object NetworkModule {
-
+object RetrofitModule {
     @Singleton
     @Provides
-    fun provideRetrofit(): Retrofit =
+    fun provideRetrofit() : Retrofit =
         Retrofit.Builder()
-            .baseUrl("https://drawsomething-59328-default-rtdb.europe-west1.firebasedatabase.app/")
+            .baseUrl("https://jsonblob.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
     @Singleton
     @Provides
-    fun provideQuoteApiClient(retrofit: Retrofit): QuoteApiClient =
-        retrofit.create(QuoteApiClient::class.java)
+    fun provideDogApiClient(retrofit: Retrofit): DogApiClient =
+        retrofit.create(DogApiClient::class.java)
 }

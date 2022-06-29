@@ -1,8 +1,8 @@
-package com.eerick.learningmvvm.dependencyInjection
+package com.eerick.doggosmvvm.di
 
 import android.content.Context
 import androidx.room.Room
-import com.eerick.learningmvvm.domain.data.database.QuoteDatabase
+import com.eerick.doggosmvvm.domain.data.database.DogDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,15 +13,14 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object RoomModule {
-
-    private const val QUOTE_DATABASE_NAME = "quote_database"
+    private const val DOG_DATABASE_NAME = "dog_database"
 
     @Singleton
     @Provides
     fun provideRoom(@ApplicationContext context: Context) =
-        Room.databaseBuilder(context, QuoteDatabase::class.java, QUOTE_DATABASE_NAME).build()
+        Room.databaseBuilder(context, DogDatabase::class.java, DOG_DATABASE_NAME).build()
 
     @Singleton
     @Provides
-    fun provideQuoteDao(db: QuoteDatabase) = db.getQuoteDao()
+    fun provideDogDao(db: DogDatabase) = db.getDogDao()
 }

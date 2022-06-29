@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DoggosMVVM</string>
+    <string name="dogs_we_love">Dogs we love</string>
+</resources>

@@ -28,3 +28,4 @@ google-services.json
 
 # Android Profiling
 *.hprof
+RunningApp/app/src/main/res/values/strings.xml

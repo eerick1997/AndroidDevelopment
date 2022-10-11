@@ -31,7 +31,18 @@ class DefaultShoppingRepository @Inject constructor(
     }
 
     override suspend fun searchForImages(imageQuery: String): Resource<ImageResponse> {
-        
+        return try {
+            val response = pixabayAPI.searchForImage(imageQuery)
+            if (response.isSuccessful) {
+                response.body()?.let {
+                    return@let Resource.success(it)
+                } ?: Resource.error("An unknown error occurred", null)
+            } else {
+                Resource.error("An unknown error occurred", null)
+            }
+        } catch (e: Exception) {
+            Resource.error("Couldn't reach the server. Check your internet connection.", null)
+        }
     }
 
 }

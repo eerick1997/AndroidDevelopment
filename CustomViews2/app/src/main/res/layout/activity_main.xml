@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#CCCCCC"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello Custom Views"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.example.customviews2.EmotionalFaceView
+        android:id="@+id/emotionalFaceView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:state="happy"/>
+
+    <com.example.customviews2.EmotionalFaceView
+        android:id="@+id/happyButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:borderColor="@color/white"
+        app:eyesColor="@color/white"
+        app:faceColor="#FF0000"
+        app:mouthColor="@color/white"
+        app:state="happy"/>
+
+    <com.example.customviews2.EmotionalFaceView
+        android:id="@+id/sadButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:borderColor="@color/black"
+        app:eyesColor="@color/black"
+        app:faceColor="#777777"
+        app:mouthColor="@color/black"
+        app:state="sad"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

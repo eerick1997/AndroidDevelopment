@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Mealtime</string>
+    <string name="next_order">Next Meal:</string>
+    <string name="score_count">Score: %1$d</string>
+    <string name="deliver_order_button">Deliver Meal \uD83C\uDF7D</string>
+</resources>
